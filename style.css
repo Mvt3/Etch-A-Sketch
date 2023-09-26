@@ -1,0 +1,28 @@
+.container{
+    display: flex;
+}
+
+.titulo{
+    display: flex;
+    justify-content: center;
+}
+
+.ui{
+   display: flex; 
+   flex-direction: column;
+   justify-content: space-around;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.board{
+    width: 500px;
+    height: 500px;
+    background-color: aqua;
+    display: grid;
+    
+}
