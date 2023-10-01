@@ -1,6 +1,6 @@
 boardSize(16);
-let color="white";
-
+let color="white";//Global para mas mutabilidad
+let painting = true;
 //Parametro size recibirá el argumento del tamaño del lienzo (El usuario determinará el tamaño)
 function boardSize(size){
 
@@ -17,8 +17,8 @@ function boardSize(size){
     let divAmount = size * size
     for(let i = 0; i<divAmount; i++){
         let square = document.createElement('div');
-        square.addEventListener('mouseover', divColor)
-        square.style.backgroundColor = "white"
+        square.addEventListener('mouseover', divColor);
+        square.style.backgroundColor = "white";
         board.appendChild(square);//Se puede usar tambien insertAdjacentElement
     };
 
@@ -36,17 +36,26 @@ function changeSize(input){
     
 };
 
+//Click para que deje de pintar y Click para que siga pintando
+document.querySelector(".board").addEventListener("click", ()=>{
+    painting = !painting;
+    if (painting){
+        document.querySelector(".mode").textContent = "Mode: Painting "
+    }else{
+        document.querySelector(".mode").textContent = "Mode: Not painting "        
+    }
+}); 
+
+
 //Establece el color
 function divColor(){
-
-    if(color === "rainbow"){
-        this.style.backgroundColor = `hsl(${Math.random()*360}, 100%, 50%)`;
-    }else{
-
-        this.style.backgroundColor = color;//This se refiere al elemento HTML que activa la funct
-    };
-
-   
+    if (painting) {
+        if(color === "rainbow"){
+            this.style.backgroundColor = `hsl(${Math.random()*360}, 100%, 50%)`;
+        }else{
+            this.style.backgroundColor = color;//This se refiere al elemento HTML que activa la funct
+        };
+    }
 };
 
 
@@ -64,3 +73,17 @@ function resetBoard(){
     square.forEach((div) => div.style.backgroundColor="white");
 }
 
+//Selector de color
+const buttonColor = document.getElementById('buttonColor');
+const colorPicker = document.getElementById('colorPicker');
+
+buttonColor.addEventListener('click',()=>{
+    colorPicker.click();
+});
+
+//Aplicar color a la hora de pintar
+colorPicker.addEventListener('input',(e)=>{
+const selectedColor = e.target.value;
+color = selectedColor;
+
+});
