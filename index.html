@@ -10,8 +10,11 @@
     <div class="container">
         <div class="ui"> 
             <div class="titulo"> <h1>Time to sketch!</h1></div>
+            <div class="mode">Mode: Painting </div>
             <div class="content">
                 <button onclick="colorChange('Black')">Black</button>
+                <button id="buttonColor">Select a color</button>
+                <input type="color" id="colorPicker" style="display: none;">
                 <button onclick="colorChange('White')">Erase</button>
                 <button onclick="colorChange('rainbow')">Rainbow</button>
                 <button onclick="resetBoard()">Reset board</button>

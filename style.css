@@ -1,9 +1,18 @@
 body{
     background-color: beige;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Alinea verticalmente el contenido al centro */
+    min-height: 100vh; /* Esto asegura que el contenido ocupe al menos toda la altura de la ventana */
+    margin: 0;
 }
 
 .container{
+    background-color: khaki;
+    border-radius: 5px;
+    border: 2px solid black;
     display: flex;
+    padding: 5px;
 }
 
 .titulo{
@@ -28,5 +37,38 @@ body{
     height: 500px;
     background-color: aqua;
     display: grid;
+    border: 1px solid black;
+    box-shadow: 4px 4px 10px rgba(255, 217, 0, 0.397);
+
     
 }
+
+button{
+  background-color: ghostwhite;  
+  border-radius: 5px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+  padding: 5px;
+  margin: 5px;
+  color: black;
+  font-weight: 540; 
+  transition: 0.4s;
+
+}
+
+
+button:hover{
+    margin: 10px;
+    padding: 6px;
+    box-shadow: inset 4px 4px 10px rgba(153, 21, 21, 0.623);
+
+}
+
+.mode{
+    display: flex;
+    margin-left: 50px;
+    max-height: 30px;
+    max-width: fit-content; 
+    font-size: large;
+    font-weight: 500;
+}
+
